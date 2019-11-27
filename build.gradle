@@ -14,9 +14,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.1.RELEASE'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 test {
