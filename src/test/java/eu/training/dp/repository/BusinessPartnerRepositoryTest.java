@@ -1,5 +1,6 @@
 package eu.training.dp.repository;
 
+import eu.training.dp.common.DbType;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatchers;
@@ -10,6 +11,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static eu.training.dp.common.DbType.ORACLE;
+import static eu.training.dp.common.DbType.SOLID;
+import static org.mockito.Mockito.when;
 
 public class BusinessPartnerRepositoryTest {
 
@@ -35,6 +40,7 @@ public class BusinessPartnerRepositoryTest {
     @Test
     public void findBusinessPartnerInfoFor_expectedSolidQueryRan() {
         businessPartnerRepository.findBusinessPartnerInfoFor(QUERY_MAP_ARG_LAST_NAME, QUERY_MAP_ARG_FIRST_NAME);
+        mockUsedDbType(SOLID);
 
         Mockito.verify(jdbcTemplate, Mockito.atMostOnce()).queryForObject(
                 ArgumentMatchers.eq(QUERY_SOLID_STR),
@@ -45,6 +51,7 @@ public class BusinessPartnerRepositoryTest {
     @Test
     public void findBusinessPartnerInfoFor_expectedMethodCalledOnce() {
         businessPartnerRepository.findBusinessPartnerInfoFor("Ionut", "Popescu");
+        mockUsedDbType(SOLID);
 
         Mockito.verify(jdbcTemplate, Mockito.times(1)).queryForObject(
                 ArgumentMatchers.anyString(),
@@ -52,11 +59,12 @@ public class BusinessPartnerRepositoryTest {
                 ArgumentMatchers.any(Class.class));
     }
 
-//        @Test
+    //        @Test
     public void findBusinessPartnerInfoFor_expectedOracleQueryRan() {
         businessPartnerRepository.findBusinessPartnerInfoFor(QUERY_MAP_ARG_LAST_NAME, QUERY_MAP_ARG_FIRST_NAME);
+        mockUsedDbType(ORACLE);
 
-        Mockito.verify(jdbcTemplate, Mockito.atMostOnce()).queryForObject(
+        Mockito.verify(jdbcTemplate, Mockito.times(1)).queryForObject(
                 ArgumentMatchers.eq(QUERY_ORACLE_STR),
                 ArgumentMatchers.eq(getExpectedParameters()),
                 ArgumentMatchers.eq(Integer.class));
@@ -69,4 +77,7 @@ public class BusinessPartnerRepositoryTest {
         return parameters;
     }
 
+    private void mockUsedDbType(DbType dbType) {
+        when(dbTypeRepository.getDbType()).thenReturn(dbType);
+    }
 }
