@@ -37,7 +37,7 @@ public class FizzBuzzServiceTest {
 
 //    @Test
     public void testFizzBuzzWoofAlgorithmUntil100() {
-        String fizzBuzzResult = fizzBuzzService.getFizzBuzzFor(100);
+        String fizzBuzzResult = fizzBuzzService.getFizzBuzzWoofFor(100);
 
         Assert.assertEquals(EXPECTED_FIZZBUZZWOOF_STRING_UNTIL_100, fizzBuzzResult);
     }
