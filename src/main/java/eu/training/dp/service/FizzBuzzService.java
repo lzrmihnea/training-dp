@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class FizzBuzzService {
 
+    /**
+     * Use {@class eu.training.dp.chainofresp.FizzBuzzBaseHandler} with implemented handlers to replace logic below.
+     */
     public String getFizzBuzzFor(int upperLimit) {
         if(upperLimit<=0) {
             throw new RuntimeException("Given limit must be a positive number");
