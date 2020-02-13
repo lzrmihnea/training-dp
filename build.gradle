@@ -17,6 +17,8 @@ dependencies {
 
 	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.1.RELEASE'
 
+	compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.0.0'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
