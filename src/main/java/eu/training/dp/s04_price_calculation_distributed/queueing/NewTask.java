@@ -12,6 +12,7 @@ import java.util.concurrent.TimeoutException;
 public class NewTask {
 
     private static final String TASK_QUEUE_NAME = "task_queue";
+    private static final String PREFIX_TASK = "[T]";
 
     private String name;
 
@@ -43,9 +44,9 @@ public class NewTask {
             channel.basicPublish("", TASK_QUEUE_NAME,
                     MessageProperties.PERSISTENT_TEXT_PLAIN,
                     message.getBytes("UTF-8"));
-            System.out.println(this.name + " [x] Sent '" + message + "'\n");
+            System.out.println(PREFIX_TASK + " " + this.name + " Sent '" + message + "'\n");
         } catch (IOException e) {
-            System.err.println(this.name + "Error in sending message: " + e.getMessage());
+            System.err.println(PREFIX_TASK + " " + this.name + "Error in sending message: " + e.getMessage());
         }
     }
 

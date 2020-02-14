@@ -8,6 +8,7 @@ import java.util.concurrent.TimeoutException;
 public class Worker {
 
     private static final String TASK_QUEUE_NAME = "task_queue";
+    private static final String PREFIX_WORKER = "[W]";
 
     private String name;
 
@@ -19,7 +20,7 @@ public class Worker {
         final Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare(TASK_QUEUE_NAME, true, false, false, null);
-        System.out.println(this.name + " [*] Ready! \n");
+        System.out.println(PREFIX_WORKER + " " + this.name + " Ready! \n");
         channel.basicQos(1);
 
         final Consumer consumer = new DefaultConsumer(channel) {
@@ -27,7 +28,7 @@ public class Worker {
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 String message = new String(body, "UTF-8");
 
-                System.out.println(name + " [x] Received '" + message + "'\n");
+                System.out.println(PREFIX_WORKER + " " + name + " Received '" + message + "'\n");
                 try {
                     doWork(message);
                 } finally {

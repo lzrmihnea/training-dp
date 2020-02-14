@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import static eu.training.dp.s04_price_calculation_distributed.util.TimeUtil.sleep;
-import static eu.training.dp.s04_price_calculation_distributed.util.TimeUtil.sleepPrio;
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.toList;
 
@@ -32,7 +31,7 @@ public class ArticleEndPriceCalculationService {
                 .peek(finalPrice::addDiscount)
                 .collect(toList());
 
-        sleepPrio(0.5, "End price for " + aPrice.getArticleId() + " was computed as " + finalPrice.getPrice().toPlainString() + " " + finalPrice.getCurrency());
+        sleep(0.5, "End price for " + aPrice.getArticleId() + " was computed as " + finalPrice.getPrice().toPlainString() + " " + finalPrice.getCurrency());
         return finalPrice;
     }
 }
