@@ -17,7 +17,7 @@ The highlighted patterns were applied in coding exercises
 
 ### [Session 04, Enterprise Integration, Messaging]( https://docs.google.com/presentation/d/14moDi3ivXWOhlBB1QOatqw5EFgEKPUF-w2BHcxmtrU8/ )
 * RabbitMq needed: `https://www.rabbitmq.com/download.html`
-* Messaging (Publisher/Consumer, Work Queues, Publish/Subscribe, Routing, Topics, Remote Procedure Call)
+* Messaging (**Publisher/Consumer**, **Work Queues**, Publish/Subscribe, Routing, Topics, Remote Procedure Call)
 * Exercises covered in 
   * `eu.training.dp.s04_price_calculation_distributed.queueing.MessagingTest`
   * `eu.training.dp.s04_price_calculation_distributed.service.ArticleMediationServiceTest`

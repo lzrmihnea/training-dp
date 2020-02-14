@@ -22,19 +22,19 @@ import static java.util.Arrays.asList;
 public class ArticlePriceRepository {
 
     public ArticlePrice getArticleProductionPrice(long articleId) {
-        sleep(0.5, "Getting production price for " + articleId);
+        sleep(0.5, "Getting production price for [" + articleId + "]");
         return new ArticlePrice(DE, articleId, EUR, valueOf(random() * 1000));
     }
 
     public List<ArticlePriceDiscount> getDiscountsFor(long articleId) {
-        sleep(1, "Getting discounts for " + articleId);
+        sleep(1, "Getting discounts for [" + articleId + "]");
         return asList(
                 new ArticlePriceDiscount(articleId, getValueWithRandom(TEN, 10), PERC, "Summer discount", 0, 0),
                 new ArticlePriceDiscount(articleId, getValueWithRandom(ONE, 25), ABS, "Monthly discount", 1, 0));
     }
 
     public List<ArticlePriceTax> getTaxesFor(long articleId) {
-        sleep(1, "Getting taxes for " + articleId);
+        sleep(1, "Getting taxes for [" + articleId + "]");
         return asList(
                 new ArticlePriceTax(articleId, getValueWithRandom(BigDecimal.valueOf(20), 5), PERC, "VAT", 0, DE),
                 new ArticlePriceTax(articleId, getValueWithRandom(ONE, 2), ABS, "Regional tax", 1, DE),
