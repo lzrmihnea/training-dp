@@ -1,4 +1,4 @@
-package eu.training.dp.s02_fizz_buzz.service;
+package eu.training.dp.s03_ticket_access.service;
 
 import eu.training.dp.s03_ticket_access.composite.PrivacyLevel;
 import eu.training.dp.s03_ticket_access.composite.Ticket;
