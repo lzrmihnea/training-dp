@@ -24,4 +24,12 @@ public class Article {
         this.articleId = articleId;
         this.articleName = articleName;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "articleId=" + articleId +
+                ", articleName='" + articleName + '\'' +
+                '}';
+    }
 }

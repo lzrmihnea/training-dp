@@ -21,4 +21,16 @@ public class ArticlePriceTax extends ArticlePriceModification {
         super(articleId, amount, modificationType, name, position);
         this.country = country;
     }
+
+    @Override
+    public String toString() {
+        return "ArticlePriceTax{" +
+                "country=" + country +
+                ", articleId=" + articleId +
+                ", amount=" + amount +
+                ", modificationType=" + modificationType +
+                ", name='" + name + '\'' +
+                ", position=" + position +
+                '}';
+    }
 }

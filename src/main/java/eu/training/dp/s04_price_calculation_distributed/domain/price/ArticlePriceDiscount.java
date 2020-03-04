@@ -21,4 +21,16 @@ public class ArticlePriceDiscount extends ArticlePriceModification {
         super(articleId, amount, modificationType, name, position);
         this.storeId = storeId;
     }
+
+    @Override
+    public String toString() {
+        return "ArticlePriceDiscount{" +
+                "storeId=" + storeId +
+                ", articleId=" + articleId +
+                ", amount=" + amount +
+                ", modificationType=" + modificationType +
+                ", name='" + name + '\'' +
+                ", position=" + position +
+                '}';
+    }
 }
