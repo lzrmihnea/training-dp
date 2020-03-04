@@ -1,9 +1,6 @@
 # Applied Design Patterns in Java - a training
 
-## Slides
-The highlighted patterns were applied in coding exercises
-
-### [Session 01, Creational](https://docs.google.com/presentation/d/1w5dAwnYFEj0Cfp4d2XDtjs9FbEH57BQMlJQtd55Z-6Q/)
+## [Session 01, Creational](https://docs.google.com/presentation/d/1w5dAwnYFEj0Cfp4d2XDtjs9FbEH57BQMlJQtd55Z-6Q/)
 * Creational 
   * Singleton
   * Proxy
@@ -11,7 +8,7 @@ The highlighted patterns were applied in coding exercises
   * Factory)
 * Exercises covered in `eu.training.dp.s01_native_queries_multi_dbs.repository.BusinessPartnerRepositoryTest`
 
-### [Session 02, Creational & Behavioral](https://docs.google.com/presentation/d/1qkUy7NgRXEpc1gLT1DpZLU5B2VE4G7JFWFGASfN78U8/) 
+## [Session 02, Creational & Behavioral](https://docs.google.com/presentation/d/1qkUy7NgRXEpc1gLT1DpZLU5B2VE4G7JFWFGASfN78U8/) 
 * Creational 
   * **Factory** 
 * Behavioral 
@@ -20,7 +17,7 @@ The highlighted patterns were applied in coding exercises
   * **Chain of Responsibility** 
 * Exercises covered in `eu.training.dp.s02_fizz_buzz.service.FizzBuzzServiceTest`
 
-### [Session 03, Structural](https://docs.google.com/presentation/d/1L0NH6MUp_SsVl3Lts7fdkUrQFQke8D2Uv2nMXvq0mys/)
+## [Session 03, Structural](https://docs.google.com/presentation/d/1L0NH6MUp_SsVl3Lts7fdkUrQFQke8D2Uv2nMXvq0mys/)
 * Structural 
   * Adapter
   * Proxy
@@ -28,7 +25,7 @@ The highlighted patterns were applied in coding exercises
   * **Composite**
 * Exercises covered in `eu.training.dp.s02_fizz_buzz.service.TicketAccessServiceTest`
 
-### [Session 04, Enterprise Integration, Messaging]( https://docs.google.com/presentation/d/14moDi3ivXWOhlBB1QOatqw5EFgEKPUF-w2BHcxmtrU8/ )
+## [Session 04, Enterprise Integration, Messaging]( https://docs.google.com/presentation/d/14moDi3ivXWOhlBB1QOatqw5EFgEKPUF-w2BHcxmtrU8/ )
 * RabbitMq needed: `https://www.rabbitmq.com/download.html`
 * Messaging 
   1. **Publisher/Consumer**
@@ -41,7 +38,7 @@ The highlighted patterns were applied in coding exercises
   * `eu.training.dp.s04_price_calculation_distributed.queueing.MessagingTest`
   * `eu.training.dp.s04_price_calculation_distributed.service.ArticleMediationServiceTest`
 
-### [Session 05, Enterprise Integration, Routing]( https://docs.google.com/presentation/d/1TojZ3pAXCtGIT089UMiGWtp3Zh51_ZTE7ToXvRmBB7w/ )
+## [Session 05, Enterprise Integration, Routing]( https://docs.google.com/presentation/d/1TojZ3pAXCtGIT089UMiGWtp3Zh51_ZTE7ToXvRmBB7w/ )
 * Routing 
   1. Pipes and Filters
   2. Message Filter 
