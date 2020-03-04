@@ -29,7 +29,7 @@
 
 ##
 ### [Session 04, Enterprise Integration, Messaging]( https://docs.google.com/presentation/d/14moDi3ivXWOhlBB1QOatqw5EFgEKPUF-w2BHcxmtrU8/ )
-* RabbitMq needed: `https://www.rabbitmq.com/download.html`
+* **[Erlang](https://www.erlang.org/downloads)** and **[RabbitMq](https://www.rabbitmq.com/download.html)** needed.
 * Messaging 
   1. **Publisher/Consumer**
   2. **Work Queues**
