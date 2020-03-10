@@ -54,3 +54,13 @@
   8. Routing Slip
   9. Process Manager
 
+##
+### [Session 06, Enterprise Integration, Transformation]( https://docs.google.com/presentation/d/1E6JrOnqdeysNqVxapjocjwHdsvHiK9PCPBAL-dvoxxs/ ) 
+* Transforming / Translating
+  1. Message Translator
+  2. Envelope Wrapper
+  3. Content Enricher
+  4. Content Filter
+  5. Claim Check
+  6. Normalizer
+  7. Canonical Data Model
