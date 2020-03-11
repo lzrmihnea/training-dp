@@ -39,7 +39,7 @@ public class ArticleMediationService {
                     List<ArticlePriceDiscount> discountsFor = this.articlePriceRepository.getDiscountsFor(articleId);
                     ArticlePrice endPriceFor = this.articleEndPriceCalculationService.getEndPriceFor(articleProductionPrice, taxesFor, discountsFor);
 
-                    sleep(0.1, "End price received: " + endPriceFor);
+                    this.articlePriceRepository.saveEndPrice(endPriceFor);
                 });
     }
 }

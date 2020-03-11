@@ -6,20 +6,24 @@ import eu.training.dp.s04_price_calculation_distributed.domain.price.ArticlePric
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import static eu.training.dp.s04_price_calculation_distributed.util.RandomPriceUtil.getValueWithRandom;
-import static eu.training.dp.s04_price_calculation_distributed.util.TimeUtil.sleep;
 import static eu.training.dp.s04_price_calculation_distributed.domain.type.Country.DE;
 import static eu.training.dp.s04_price_calculation_distributed.domain.type.Currency.EUR;
 import static eu.training.dp.s04_price_calculation_distributed.domain.type.PriceModificationType.ABS;
 import static eu.training.dp.s04_price_calculation_distributed.domain.type.PriceModificationType.PERC;
+import static eu.training.dp.s04_price_calculation_distributed.util.RandomPriceUtil.getValueWithRandom;
+import static eu.training.dp.s04_price_calculation_distributed.util.TimeUtil.sleep;
 import static java.lang.Math.random;
 import static java.math.BigDecimal.*;
 import static java.util.Arrays.asList;
 
 @Repository
 public class ArticlePriceRepository {
+
+    private Map<Long, ArticlePrice> endPrices = new HashMap<>();
 
     public ArticlePrice getArticleProductionPrice(long articleId) {
         sleep(0.5, "Getting production price for [" + articleId + "]");
@@ -40,5 +44,16 @@ public class ArticlePriceRepository {
                 new ArticlePriceTax(articleId, getValueWithRandom(ONE, 2), ABS, "Regional tax", 1, DE),
                 new ArticlePriceTax(articleId, getValueWithRandom(ONE, 2), ABS, "Transport tax", 2, DE),
                 new ArticlePriceTax(articleId, getValueWithRandom(TEN, 2), PERC, "Profit tax", 3, DE));
+    }
+
+    public void saveEndPrice(ArticlePrice toSave) {
+        sleep(0.1, "End price received: " + toSave);
+        if (toSave != null && (toSave.getArticleId() > 0)) {
+            this.endPrices.put(toSave.getArticleId(), toSave);
+        }
+    }
+
+    public Map<Long, ArticlePrice> getEndPrices() {
+        return endPrices;
     }
 }
